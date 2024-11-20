@@ -87,9 +87,10 @@ const translations = {
         "contact-os-details": "(Windows 7/8/10/11, Linux Distro, etc)",
         "contact-email": "Oh, and be sure to send it to:",
 		"event-location": "The place of events in the story!",
-    "student-text": "Student at the Polytechnic University, working on game development as part of the UNDERTALE fangame project.",
+    "student-text": "Student at NULP.",
     },
     ua: {
+"student-text": "Студент НУЛП, замучився робити цей сайт.",
     "dialogue_000_000": "Вітаємо в нашій історії, <strong>мандрівнику</strong>. Я – <strong>П’єр</strong>, Душа Наполегливості.",
     "dialogue_000_001": "А я – <strong>Кайзер</strong>, Душа Доброти! Ми раді, що ти з нами!",
     "dialogue_000_002": "Не засуджуйте нас, ми теж нервуємо.",
