@@ -14,20 +14,22 @@
             height: 100vh;
             overflow: hidden;
         }
-        .error-image {
-            width: 300px;
-            height: 300px;
-            background-size: cover;
-            background-position: center;
-            animation: error-animation 1s infinite steps(2);
-        }
-        @keyframes error-animation {
-            0% { background-image: url('assets/img/error_0.png'); }
-            50% { background-image: url('assets/img/error_1.png'); }
+        img {
+            max-width: 100%;
+            max-height: 100%;
         }
     </style>
 </head>
 <body>
-    <div class="error-image"></div>
+    <img id="errorImage" src="assets/img/error_0.png" alt="Error Animation">
+    <script>
+        const images = ['assets/img/error_0.png', 'assets/img/error_1.png'];
+        let currentIndex = 0;
+
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % images.length; // Змінюємо індекс
+            document.getElementById('errorImage').src = images[currentIndex]; // Змінюємо джерело зображення
+        }, 500); // Час зміни кадру (500 мс)
+    </script>
 </body>
 </html>
