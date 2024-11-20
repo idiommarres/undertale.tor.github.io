@@ -177,9 +177,10 @@ const translations = {
         "contact-os-details": "(Windows 7/8/10/11, Linux Distro, тощо)",
         "contact-email": "І обов'язково надішліть на адресу:",
 		"event-location": "Місце подій у сюжеті!",
-    "student-text": "Студент НУЛП, автор сайту",
+    "student-text": "Студент НУЛП, змучився ",
     },
 };
+
 
 const changeLanguage = (lang) => {
     // Save the selected language
