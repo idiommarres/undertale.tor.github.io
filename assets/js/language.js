@@ -181,8 +181,6 @@ const translations = {
     },
 };
 
-};
-
 const changeLanguage = (lang) => {
     // Save the selected language
     localStorage.setItem('selectedLanguage', lang);
