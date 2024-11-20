@@ -1,5 +1,6 @@
 const translations = {
     en: {
+		"teaser-text": "Watch our latest teaser",
         about: "ABOUT",
         faq: "FAQ / CONTACT",
         credits: "CREDITS",
@@ -83,8 +84,9 @@ const translations = {
         "contact-email": "Oh, and be sure to send it to:",
     },
     ua: {
+		"teaser-text": "Подивіться наш останній тизер",
         about: "ПРО ГРУ",
-        faq: "FAQ / КОНТАКТИ",
+        faq: "ЧАПИ / ЗВОРОТНІЙ ЗВ'ЯЗОК",
         credits: "АВТОРИ",
         recommended: "Рекомендовано після проходження",
         news: "НОВИНИ ТА ОНОВЛЕННЯ",
@@ -98,7 +100,7 @@ const translations = {
         post3: "Колись, давним давно...",
         post2: "Дім, милий дім",
         post1p1: "Перше інформаційне видання UTTOR!!",
-        post1p2: "Так захоплююче! Так нове! Таке приголомшливе!",
+        post1p2: "Так захоплююче! Так по-новітньому! Таке приголомшливо!",
         post1p3: "Так багато знаків оклику!!!!!!!!!!!!!!!!!!!!",
         "credits-1": "UNDERTALE © 2015 / DELTARUNE © 2018 від Toby Fox",
         "credits-2": "Trails of Resilience 2024-2024 від idiommarres",
