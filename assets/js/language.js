@@ -177,7 +177,7 @@ const translations = {
         "contact-os-details": "(Windows 7/8/10/11, Linux Distro, тощо)",
         "contact-email": "І обов'язково надішліть на адресу:",
 		"event-location": "Місце подій у сюжеті!",
-    "student-text": "Студент Політехнічного університету, голова проєкту.",
+    "student-text": "Студент НУЛП, дуже старався робити цей сайт!",
     },
 };
 
