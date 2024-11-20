@@ -178,6 +178,61 @@ strong {
     height: 240px;
 }
 
+ /* Контейнер для вирівнювання */
+    .dialogue-box-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    /* Кнопка у вигляді діалогової коробки */
+    .dialogue-box {
+        position: relative;
+        max-width: 566px;
+        background-color: black;
+        border: 6px solid white;
+        color: white;
+        font-family: '8bitOperatorPlus-Bold', monospace;
+        padding: 20px 30px;
+        box-sizing: border-box;
+        text-align: center;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.2s ease, background-color 0.3s ease;
+    }
+
+    .dialogue-box:hover {
+        transform: translateY(-3px);
+        background-color: white;
+        color: black;
+    }
+
+    /* Текст кнопки */
+    .dialogue-text {
+        font-size: 1.2rem;
+        display: block;
+        word-wrap: break-word;
+    }
+
+
+
+/* Кастомні стилі для кнопки */
+.download-btn {
+    border: 1px solid #fff;
+    background-color: transparent;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+/* Стилі для модального вікна */
+.modal-content {
+    background-color: #2d2d2d; /* Темний фон для модалки */
+    color: #fff;
+}
+
+
 .video-container {
         position: relative;
         width: 80%; /* Займає 80% ширини сторінки */
@@ -199,15 +254,6 @@ strong {
         border: 0;
     }
 	
-.hidden {
-    opacity: 0;
-    transform: translateY(50px); /* Елемент буде трохи нижчим */
-    transition: all 0.5s ease-in-out;
-  }
-  .visible {
-    opacity: 1;
-    transform: translateY(0); /* Повернення до стандартного стану */
-  }
 
 /* Dialogue Text */
 .dialogue-text {

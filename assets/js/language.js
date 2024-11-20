@@ -88,6 +88,35 @@ const translations = {
         "contact-email": "Oh, and be sure to send it to:",
 		"event-location": "The place of events in the story!",
     "student-text": "Student at NULP.",
+"download-btn": "DOWNLOAD",
+        "download-modal-title": "DOWNLOAD GAME",
+        "download-modal-warning": "Please read the information below before downloading the program.",
+        "download-modal-prerequisite": "* This is intended for people who have completed UNDERTALE and DELTARUNE Chapters 1&2.",
+        "windows-title": "WINDOWS",
+        "windows-64bit": "DOWNLOAD (64-BIT)",
+        "windows-32bit": "DOWNLOAD (32-BIT)",
+        "linux-title": "LINUX",
+        "linux-download": "DOWNLOAD (32-BIT & 64-BIT COMBO PACK)",
+        "android-title": "ANDROID",
+        "android-download": "DOWNLOAD (APK)",
+        "mirrors-title": "MIRRORS",
+        "gamejolt-mirror": "MIRROR (GAME JOLT)",
+        "itchio-mirror": "MIRROR (ITCH.IO)",
+        "download-modal-info": "For more information, contact us or check our support page.",
+
+        // Mailing List Modal Translations
+        "mailing-list-title": "MAILING LIST",
+        "mailing-list-subtitle": "Subscribe to receive updates about Trails of Resilience.",
+        "mailing-list-privacy": "We will NEVER use your email for anything other than sending updates about this project.",
+        "tier-minimal": "MINIMAL — Only tell me about major updates like new chapters or milestones.",
+        "tier-normal": "NORMAL — Send me seasonal newsletters and detailed updates on progress.",
+        "tier-super": "SUPER — Notify me instantly about any news, including side projects or concepts.",
+        "tier-truck-freak": "TRUCK FREAK — Send me anything! I want every detail, no matter how small!",
+        "name-label": "Name (optional):",
+        "food-label": "Favorite Food (optional):",
+        "email-label": "Email Address:",
+        "subscribe-btn": "Subscribe",
+        "privacy-policy": "Check our Privacy Policy for more info."
     },
     ua: {
 		 "dialogue_000_000": "Вітаємо в нашій історії, <strong>мандрівнику</strong>. Я – <strong>П’єр</strong>, Душа Наполегливості.",
@@ -177,10 +206,39 @@ const translations = {
         "contact-os-details": "(Windows 7/8/10/11, Linux Distro, тощо)",
         "contact-email": "І обов'язково надішліть на адресу:",
 		"event-location": "Місце подій у сюжеті!",
-    "student-text": "Студент НУЛП, змучився ",
+    "student-text": "Студент НУЛП, ніц цікавого",
+	 // Download Modal Translations
+        "download-btn": "ЗАВАНТАЖИТИ",
+        "download-modal-title": "ЗАВАНТАЖЕННЯ ГРИ",
+        "download-modal-warning": "Будь ласка, прочитайте інформацію нижче перед завантаженням програми.",
+        "download-modal-prerequisite": "* Призначено для тих, хто пройшов UNDERTALE та DELTARUNE Розділи 1 і 2.",
+        "windows-title": "WINDOWS",
+        "windows-64bit": "ЗАВАНТАЖИТИ (64-БІТНА)",
+        "windows-32bit": "ЗАВАНТАЖИТИ (32-БІТНА)",
+        "linux-title": "LINUX",
+        "linux-download": "ЗАВАНТАЖИТИ (КОМБО-ПАКЕТ 32-БІТНА & 64-БІТНА)",
+        "android-title": "ANDROID",
+        "android-download": "ЗАВАНТАЖИТИ (APK)",
+        "mirrors-title": "ДЗЕРКАЛА",
+        "gamejolt-mirror": "ДЗЕРКАЛО (GAME JOLT)",
+        "itchio-mirror": "ДЗЕРКАЛО (ITCH.IO)",
+        "download-modal-info": "Для отримання додаткової інформації зверніться до нас або перевірте сторінку підтримки.",
+
+        // Mailing List Modal Translations
+        "mailing-list-title": "СПИСОК РОЗСИЛКИ",
+        "mailing-list-subtitle": "Підпишіться, щоб отримувати оновлення про Trails of Resilience.",
+        "mailing-list-privacy": "Ми НІКОЛИ не будемо використовувати вашу електронну пошту для чогось іншого, крім надсилання оновлень про цей проект.",
+        "tier-minimal": "МІНІМАЛЬНИЙ — Повідомляти лише про важливі оновлення, такі як нові розділи або віхи.",
+        "tier-normal": "ЗВИЧАЙНИЙ — Надсилати щосезонні інформаційні бюлетені та детальні оновлення про прогрес.",
+        "tier-super": "СУПЕРСЬКИЙ — Миттєво сповіщати про будь-які новини, включаючи побічні проекти або концепції.",
+        "tier-truck-freak": "ПОВНИЙ ФАНАТ — Надсилати все! Я хочу кожну деталь, незалежно від її розміру!",
+        "name-label": "Ім'я (необов'язково):",
+        "food-label": "Улюблена їжа (необов'язково):",
+        "email-label": "Адреса електронної пошти:",
+        "subscribe-btn": "Підписатися",
+        "privacy-policy": "Перевірте нашу Політику конфіденційності для отримання додаткової інформації.",
     },
 };
-
 
 const changeLanguage = (lang) => {
     // Save the selected language
@@ -211,6 +269,37 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Dynamically translate modals
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+        // Translate modal titles
+        const modalTitle = modal.querySelector('.modal-title');
+        if (modalTitle) {
+            const titleKey = modalTitle.getAttribute('data-key');
+            if (titleKey && translations[savedLanguage][titleKey]) {
+                modalTitle.textContent = translations[savedLanguage][titleKey];
+            }
+        }
+
+        // Translate modal paragraphs
+        const modalParagraphs = modal.querySelectorAll('.modal-body p');
+        modalParagraphs.forEach(p => {
+            const paragraphKey = p.getAttribute('data-key');
+            if (paragraphKey && translations[savedLanguage][paragraphKey]) {
+                p.textContent = translations[savedLanguage][paragraphKey];
+            }
+        });
+
+        // Translate form elements
+        const formElements = modal.querySelectorAll('label, button, select option');
+        formElements.forEach(el => {
+            const key = el.getAttribute('data-key');
+            if (key && translations[savedLanguage][key]) {
+                el.textContent = translations[savedLanguage][key];
+            }
+        });
+    });
+    
     // Highlight the selected language button
     document.querySelectorAll('.flag').forEach(btn => {
         btn.classList.remove('active');
