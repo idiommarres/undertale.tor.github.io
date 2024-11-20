@@ -178,6 +178,27 @@ strong {
     height: 240px;
 }
 
+.video-container {
+        position: relative;
+        width: 80%; /* Займає 80% ширини сторінки */
+        max-width: 560px; /* Максимальна ширина */
+        padding-bottom: 28.125%; /* 16:9 пропорції, але в 2 рази менше висота (56.25% ÷ 2) */
+        height: 0;
+        margin: 20px auto; /* Відступи з боків і центроване розташування */
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Тінь для естетики */
+        border-radius: 10px; /* Округлення кутів */
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+    }
+
 /* Dialogue Text */
 .dialogue-text {
     margin: 0;
