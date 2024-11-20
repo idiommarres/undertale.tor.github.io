@@ -21,7 +21,15 @@
     </style>
 </head>
 <body>
+    <!-- Аудіо для безкінечного відтворення -->
+    <audio autoplay loop>
+        <source src="assets/mus/Settings.mp3" type="audio/mp3">
+        Ваш браузер не підтримує аудіо елементи.
+    </audio>
+
+    <!-- Покадрова анімація -->
     <img id="errorImage" src="assets/img/error_0.png" alt="Error Animation">
+
     <script>
         const images = ['assets/img/error_0.png', 'assets/img/error_1.png'];
         let currentIndex = 0;

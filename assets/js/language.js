@@ -1,5 +1,9 @@
 const translations = {
     en: {
+		"dialogue_000_000": "Welcome to our story, <strong>traveler</strong>. I am <strong>Pierre</strong>, the Soul of Perseverance.",
+"dialogue_000_001": "And I'm <strong>Kaiser</strong>, the Soul of Kindness! We’re glad to have you here!",
+"dialogue_000_002": "Don't judge us, we are nerveous too!",
+"dialogue_000_003": "Stick around—we’ve got plenty of surprises waiting for you. <strong>Stay determined!</strong>",
 		"teaser-text": "Watch our latest teaser",
         about: "ABOUT",
         faq: "FAQ / CONTACT",
@@ -84,6 +88,10 @@ const translations = {
         "contact-email": "Oh, and be sure to send it to:",
     },
     ua: {
+		 "dialogue_000_000": "Вітаємо в нашій історії, <strong>мандрівнику</strong>. Я – <strong>П’єр</strong>, Душа Наполегливості.",
+"dialogue_000_001": "А я – <strong>Кайзер</strong>, Душа Доброти! Ми раді, що ти з нами!",
+"dialogue_000_002": "Не засуджуйте нас, ми теж переживаєм.",
+"dialogue_000_003": "Залишайся з нами – на тебе чекає безліч несподіванок. <strong>Не здавайся!</strong>",
 		"teaser-text": "Подивіться наш останній тизер",
         about: "ПРО ГРУ",
         faq: "ЧАПИ / ЗВОРОТНІЙ ЗВ'ЯЗОК",
@@ -170,31 +178,41 @@ const translations = {
 };
 
 const changeLanguage = (lang) => {
+    // Save the selected language
+    localStorage.setItem('selectedLanguage', lang);
+    
+    // Add the language as a URL parameter and reload the page
+    const currentUrl = new URL(window.location.href);
+    currentUrl.searchParams.set('lang', lang);
+    window.location.href = currentUrl.toString();
+};
+
+// Handle initial language setup when page loads
+document.addEventListener("DOMContentLoaded", () => {
+    // First check URL parameters for language
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang');
+    
+    // Then check localStorage, fallback to 'en' if neither exists
+    const savedLanguage = urlLang || localStorage.getItem('selectedLanguage') || 'en';
+    
+    // Apply translations
     document.querySelectorAll(".lang").forEach((el) => {
         const key = el.getAttribute("data-key");
-        if (translations[lang] && translations[lang][key]) {
-            el.innerHTML = translations[lang][key];
+        if (translations[savedLanguage] && translations[savedLanguage][key]) {
+            el.innerHTML = translations[savedLanguage][key];
         } else {
             el.innerHTML = key; // Fallback in case translation is missing
         }
     });
 
-    // Зберігаємо вибрану мову
-    localStorage.setItem('selectedLanguage', lang);
-
     // Highlight the selected language button
     document.querySelectorAll('.flag').forEach(btn => {
         btn.classList.remove('active');
     });
-    document.getElementById(`lang-${lang}`).classList.add('active');
-};
-
-// Відновлюємо мову з localStorage або встановлюємо англійську за замовчуванням
-document.addEventListener("DOMContentLoaded", () => {
-    const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
-    changeLanguage(savedLanguage);
+    document.getElementById(`lang-${savedLanguage}`).classList.add('active');
 });
 
-// Обробка кліків для зміни мови
+// Event listeners for language buttons
 document.getElementById("lang-en").addEventListener("click", () => changeLanguage("en"));
 document.getElementById("lang-ua").addEventListener("click", () => changeLanguage("ua"));

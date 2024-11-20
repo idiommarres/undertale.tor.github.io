@@ -129,6 +129,94 @@ strong {
     border-top: 1px solid #333; /* Додатковий поділ між заголовком і тілом */
 }
 
+/* Dialogue Box Styling */
+.dialogue-box {
+    position: relative;
+    width: 100%;
+    max-width: 566px; /* Max width for desktop */
+    height: auto;
+    background-color: black;
+    border: 6px solid white;
+    color: white;
+    font-family: '8bitOperatorPlus-Bold', monospace;
+    display: flex;
+    flex-direction: row; /* To align text and image side by side */
+    padding: 24px 28px;
+    box-sizing: border-box;
+    margin: 20px auto; /* Center the box horizontally */
+    overflow: hidden;
+    word-wrap: break-word; /* Allow word wrapping */
+    text-align: left;
+    min-height: 140px; /* Default height for 1-3 lines of text */
+    max-height: 280px; /* Maximum height, 2-3 lines of text */
+}
+
+/* Character Face */
+.character-face {
+    position: absolute;
+    top: 30px;
+    left: 34px;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    image-rendering: pixelated; /* Ensure pixelated quality */
+}
+
+/* Scaling face images with different x-sizes */
+.character-face.x1 {
+    width: 80px;
+    height: 80px;
+}
+
+.character-face.x2 {
+    width: 160px;
+    height: 160px;
+}
+
+.character-face.x3 {
+    width: 240px;
+    height: 240px;
+}
+
+/* Dialogue Text */
+.dialogue-text {
+    margin: 0;
+    font-family: '8bitOperatorPlus-Bold', monospace;
+    white-space: pre-wrap; /* Allow text to wrap in multiple lines */
+    word-wrap: break-word; /* Ensure long words break */
+    word-break: break-word; /* Prevent overflow */
+    display: inline-block; /* Keeps the text within the box */
+    font-size: 1.1rem;
+    margin-left: 0; /* Default no margin */
+}
+
+/* With face style (when face is included) */
+.with-face {
+    margin-left: 144px; /* Adjust for face */
+}
+
+/* Without face style (when no face) */
+.without-face {
+    margin-left: 0; /* No extra margin when no face */
+}
+
+/* Responsive design for dialogue box */
+@media screen and (max-width: 767px) {
+    .dialogue-box {
+        max-width: 90%;
+        height: auto; /* Allow height to adjust */
+    }
+
+    .character-face {
+        width: 60px;
+        height: 60px;
+    }
+
+    .dialogue-text {
+        font-size: 1rem; /* Smaller text on mobile */
+    }
+}
+
 
 /* Footer */
 footer {
