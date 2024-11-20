@@ -86,6 +86,8 @@ const translations = {
         "contact-os": "Your operating system or platform",
         "contact-os-details": "(Windows 7/8/10/11, Linux Distro, etc)",
         "contact-email": "Oh, and be sure to send it to:",
+		"event-location": "The place of events in the story!",
+    "student-text": "Student at the Polytechnic University, working on game development as part of the UNDERTALE fangame project.",
     },
     ua: {
 		 "dialogue_000_000": "Вітаємо в нашій історії, <strong>мандрівнику</strong>. Я – <strong>П’єр</strong>, Душа Наполегливості.",
@@ -173,7 +175,9 @@ const translations = {
         "contact-problem-details": "що ви зустріли і що сталося перед цим. Скріншоти/відео завжди корисні, якщо можливо!",
         "contact-os": "Вашу операційну систему або платформу",
         "contact-os-details": "(Windows 7/8/10/11, Linux Distro, тощо)",
-        "contact-email": "І обов'язково надішліть на адресу:"
+        "contact-email": "І обов'язково надішліть на адресу:",
+		"event-location": "Місце подій у сюжеті!",
+    "student-text": "Студент Політехнічного університету, голова проєкту.",
     },
 };
 
