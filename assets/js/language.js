@@ -179,17 +179,22 @@ const changeLanguage = (lang) => {
         }
     });
 
+    // Зберігаємо вибрану мову
+    localStorage.setItem('selectedLanguage', lang);
+
     // Highlight the selected language button
-    document.querySelectorAll('.lang-button').forEach(btn => {
+    document.querySelectorAll('.flag').forEach(btn => {
         btn.classList.remove('active');
     });
     document.getElementById(`lang-${lang}`).classList.add('active');
 };
 
-// Initialize with English
+// Відновлюємо мову з localStorage або встановлюємо англійську за замовчуванням
 document.addEventListener("DOMContentLoaded", () => {
-    changeLanguage("en");
+    const savedLanguage = localStorage.getItem('selectedLanguage') || 'en';
+    changeLanguage(savedLanguage);
 });
 
+// Обробка кліків для зміни мови
 document.getElementById("lang-en").addEventListener("click", () => changeLanguage("en"));
 document.getElementById("lang-ua").addEventListener("click", () => changeLanguage("ua"));
